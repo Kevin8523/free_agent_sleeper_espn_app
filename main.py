@@ -15,6 +15,7 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+import time
 
 # Reading Excel Spreadsheets
 import openpyxl
@@ -52,7 +53,7 @@ browser = webdriver.Firefox(executable_path = firefox_path)
 browser.get('http://games.espn.go.com/ffl/signin')
 
 # Waits for the login to pop-up and switches so you can find that frame
-wait = WebDriverWait(browser, 60)
+wait = WebDriverWait(browser, 1000)
 wait.until(EC.frame_to_be_available_and_switch_to_it((By.ID, "disneyid-iframe")))
 
 # Add Username & Pw
@@ -63,6 +64,7 @@ passwordElem.send_keys(my_password)
 elem = browser.find_element_by_xpath("//button[@type='submit']")
 elem.click()
 
+time.sleep(8)
 browser.switch_to_default_content()
 
 # Go to League Free Agency Page
