@@ -76,6 +76,8 @@ free_agent = browser.find_element_by_id('lastNameInput')
 free_agent.send_keys('Kai Forbath')
 browser.find_element_by_id('lastNameSubmit').click()
 
+add_player = browser.find_element_by_class_name('addButton')
+add_player.click()
 
 """
 # Next Steps 
