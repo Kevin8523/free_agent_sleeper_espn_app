@@ -1,9 +1,13 @@
 # ESPN Fantasy Football Free Agency Program
 
+## Overview
+This script is a tool to add/drop players once the waiver wire process ends to prevent from using your waiver priority. Since the waiver usually ends in the middle of the night, this script will allow you to get first priority and to run when the waiver opens. 
+- This script does not schedule the task, you will either need to set up a task scheduler of some sort
+- This was written on MACOS so some minor configurations may be required for WINDOWS 
+
 ## Requirements Before Running Script
-- Packages Needed: BeautifulSoup, selenium, openpyxl, os, sys
+- Packages Needed: BeautifulSoup, selenium, os, sys
 - Install webdriver for your internet browser, this program for Firefox (http://learn-automation.com/firefox-browser-on-mac-using-selenium-webdriver/)
-- Create excel worksheet prior to the very first run if you want to keep an record keeping
 
 ## Use config.yaml to add in all the information needed: Script Requirement
 - ESPN username: Username@gmail.com
