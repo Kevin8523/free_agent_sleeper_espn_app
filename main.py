@@ -67,7 +67,7 @@ elem.click()
 time.sleep(8)
 browser.switch_to_default_content()
 
-# Go to League Free Agency Page
+# Searches Player by Name
 browser.get(my_league)
 browser.find_element_by_xpath('//*[@id="games-tabs"]/li[3]/a').click() # Goes to the games-tab and click on the 3rd tab
 
@@ -75,31 +75,25 @@ browser.find_element_by_xpath('//*[@id="games-tabs"]/li[3]/a').click() # Goes to
 free_agent = browser.find_element_by_id('lastNameInput')
 free_agent.send_keys('Kai Forbath')
 browser.find_element_by_id('lastNameSubmit').click()
+time.sleep(8)
 
+# Selects the + to add a player
 add_player = browser.find_element_by_class_name('addButton')
 add_player.click()
 
-"""
-# Next Steps 
-0. Check if player is available to add
-1. Select on + to add 
-2. Check if player is still on your roster
-3. Select on player to drop
-4. Submit Roster
-5. Confirm
-6. Write function to loop over
-7. Make a yaml file to add user/pw/league and remove from this script 
-8. Make a log file
-"""
+# Selects the player to remove
+# Remove player based on position
+# 6-14 are QB - K >> 6 = QB, 3 = RB, 14 = K
+# 17-21 are Bench: 17 = 1st bench, 18 = 2nd bench player
+# Add an index to have numbers correspond to each position
+drop_player_position = '21'
+drop_player_xpath ='/html/body/div[2]/table/tbody/tr/td/div[3]/div/div/div/div[4]/div/div/div/div[3]/form/table[2]/tbody/tr/td/table/tbody/tr['+ drop_player_position +']/td[1]/input'
+remove_player = browser.find_element_by_xpath(drop_player_xpath)
+remove_player.click()
 
+# Submit Roster
+browser.find_element_by_xpath('/html/body/div[2]/table/tbody/tr/td/div[3]/div/div/div/div[4]/div/div/div/div[3]/form/div/input[1]').click()
 
-
-
-###################################################
-# Send Alert Email
-###################################################
-"""
-1. Logic to only do Create request
-2. Pull email and input text
-3. Send
-"""
+# Confirm submit
+# uncomment below to have it run completely
+browser.find_element_by_xpath('/html/body/div[2]/table/tbody/tr/td/div[3]/div/div/div/div[4]/div/div/div/form/div/input[1]').click()
