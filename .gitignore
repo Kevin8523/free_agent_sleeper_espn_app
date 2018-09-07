@@ -1,6 +1,6 @@
 test.py
+test_config.yaml
 geckodriver
 geckodriver.log
 notes.txt
-
-
+/archive_version

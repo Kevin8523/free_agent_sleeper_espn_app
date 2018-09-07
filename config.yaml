@@ -1,0 +1,25 @@
+# configuration for ESPN User Information
+espn_config: {
+  username: myusername@gmail.com, # Email or Username to ESPN.com login
+  pw: mypassword, # Password to login
+  league: "http://games.espn.com/ffl/leagueoffice?leagueId=NUMBERSTOLEAGUEHERE", # League URL: ie http://games.espn.com/ffl/leagueoffice?leagueId=740173
+}
+
+# Path of firefox driver you installed
+driver_path_config: {
+  filepath: "/Users/My/Path/", # Path of the geckodriver file
+  file: geckodriver
+}
+
+# Player you wish to add
+add_player_config: {
+  add_player: Kai Forbath, # Type the name exactly as shown in ESPN
+}
+
+# Position you wish to drop
+# Input Options: 
+# QB,RB1,RB2,WR1,WR2,TE,FLEX,D/ST,K,BENCH1,BENCH2,BENCH3,BENCH4,BENCH5
+# BENCH1 is the first bench player from the top, BENCH5 is the bottom most bench player
+drop_position_config: {
+  position_drop: BENCH5,  # Position to drop for free agent
+}
