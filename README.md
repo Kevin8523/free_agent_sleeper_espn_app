@@ -25,4 +25,4 @@ This script is a tool to add/drop players once the waiver wire process ends to p
 7. Make a yaml file to add user/pw/league and remove from this script 
 8. Make a log file
 9. Schedule a Airflow job
-10. Test to add on AWS
+10. Test to add on AWS 
